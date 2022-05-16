@@ -1,0 +1,25 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+boto3 = "*"
+mypy = "*"
+pytest = "*"
+pytest-cov = "*"
+boto3-stubs = "*"
+types-requests = "*"
+typing-extensions = "*"
+diagrams = "*"
+pytest-dotenv = "*"
+
+[packages]
+requests = "*"
+pillow = "*"
+pydantic = "*"
+ulid-py = "*"
+kafka-python = "*"
+
+[requires]
+python_version = "3.7"
