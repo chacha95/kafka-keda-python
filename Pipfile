@@ -19,7 +19,7 @@ requests = "*"
 pillow = "*"
 pydantic = "*"
 ulid-py = "*"
-kafka-python = "*"
+confluent-kafka = "*"
 
 [requires]
-python_version = "3.7"
+python_version = "3.7.12"
