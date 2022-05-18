@@ -4,10 +4,6 @@
 
 ### generate configs
 
-```bash
-$ cp .env.local .env
-```
-
 ### Install Python dependencies in mac M1
 
 install `librdkafka`
@@ -55,10 +51,11 @@ $ ./minikube/setup.sh
 $ pipenv shell
 ```
 
-### test kafka producer work
+### test kafka producer & consumer work
 
 ```bash
-$ python src/kafka-producer.py
+# python src/python_kafka_test_client.py <IP:PORT>
+$ python src/python_kafka_test_client.py localhost:9092
 ```
 
 ### delete infra
