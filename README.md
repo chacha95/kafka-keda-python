@@ -43,16 +43,22 @@ install python package using pipenv
 $ PIPENV_VENV_IN_PROJECT=true pipenv install --python 3.7.12
 ```
 
+### setup infra
+
+```bash
+$ ./minikube/setup.sh
+```
+
 ### Activate virtual environment
 
 ```bash
 $ pipenv shell
 ```
 
-### setup infra
+### test kafka producer work
 
 ```bash
-$ ./minikube/setup.sh
+$ python src/kafka-producer.py
 ```
 
 ### delete infra
