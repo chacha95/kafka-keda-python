@@ -1,6 +1,6 @@
 from confluent_kafka.admin import AdminClient, NewTopic
 
-a = AdminClient({'bootstrap.servers': 'localhost:9092'})
+a = AdminClient({'bootstrap.servers': '127.0.0.1:9092'})
 
 new_topics = [NewTopic(topic, num_partitions=3, replication_factor=1) for topic in ["kafka-test"]]
 # Note: In a multi-cluster production scenario, it is more typical to use a replication_factor of 3 for durability.
