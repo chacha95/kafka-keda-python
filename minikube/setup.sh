@@ -34,6 +34,7 @@ kubectl apply -f minikube/namespaces.yaml
 kubectl config set-context --current --namespace=kafka
 ### DEPLOY KAFKA CLUSTER
 helm install kafka confluentinc/cp-helm-charts -f minikube/kafka/cluster/confluentinc-cp-helm-charts.yaml
+# helm install kafka confluentinc/cp-helm-charts
 sleep 10
 
 ### Wait for pods

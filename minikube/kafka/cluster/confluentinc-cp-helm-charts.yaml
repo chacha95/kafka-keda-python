@@ -10,7 +10,7 @@ cp-zookeeper:
   ## https://kubernetes.io/docs/concepts/containers/images/#specifying-imagepullsecrets-on-a-pod
   imagePullSecrets:
   #  - name: "regcred"
-  heapOptions: "-Xms512M -Xmx512M"
+  heapOptions: '-Xms512M -Xmx512M'
   persistence:
     enabled: false
     ## The size of the PersistentVolume to allocate to each Zookeeper Pod in the StatefulSet. For
@@ -18,13 +18,13 @@ cp-zookeeper:
     ##
     ## Size for Data dir, where ZooKeeper will store the in-memory database snapshots.
     dataDirSize: 10Gi
-    dataDirStorageClass: "gp3-common"
+    dataDirStorageClass: 'gp3-common'
     ## Size for data log dir, which is a dedicated log device to be used, and helps avoid competition between logging and snaphots.
     dataLogDirSize: 10Gi
-    dataLogDirStorageClass: "gp3-common"
-    
-  # TODO: find correct security context for user in this zk-image  
-  securityContext: 
+    dataLogDirStorageClass: 'gp3-common'
+
+  # TODO: find correct security context for user in this zk-image
+  securityContext:
     runAsUser: 0
 
   resources: {}
@@ -36,7 +36,7 @@ cp-zookeeper:
   #  requests:
   #   cpu: 100m
   #   memory: 128Mi
-  
+
   prometheus:
     jmx:
       enabled: false
@@ -53,24 +53,24 @@ cp-kafka:
   ## https://kubernetes.io/docs/concepts/containers/images/#specifying-imagepullsecrets-on-a-pod
   imagePullSecrets:
   #  - name: "regcred"
-  heapOptions: "-Xms512M -Xmx512M"
+  heapOptions: '-Xms512M -Xmx512M'
   configurationOverrides:
     offsets.topic.replication.factor: 1
     confluent.metrics.reporter.topic.replicas: 1
-    "listener.security.protocol.map": |-
+    'listener.security.protocol.map': |-
       PLAINTEXT:PLAINTEXT,EXTERNAL:PLAINTEXT
   persistence:
     enabled: false
   resources: {}
   ## If you do want to specify resources, uncomment the following lines, adjust them as necessary,
   ## and remove the curly braces after 'resources:'
-    # limits:
-    #   cpu: 500m
-    #   memory: 1024Mi
-    # requests:
-    #   cpu: 100m
-    #   memory: 512Mi
-  securityContext: 
+  # limits:
+  #   cpu: 500m
+  #   memory: 1024Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 512Mi
+  securityContext:
     runAsUser: 0
 
   prometheus:
@@ -88,7 +88,7 @@ cp-schema-registry:
   ## https://kubernetes.io/docs/concepts/containers/images/#specifying-imagepullsecrets-on-a-pod
   imagePullSecrets:
   #  - name: "regcred"
-  heapOptions: "-Xms512M -Xmx512M"
+  heapOptions: '-Xms512M -Xmx512M'
   resources: {}
   ## If you do want to specify resources, uncomment the following lines, adjust them as necessary,
   ## and remove the curly braces after 'resources:'
@@ -110,7 +110,7 @@ cp-kafka-rest:
   ## https://kubernetes.io/docs/concepts/containers/images/#specifying-imagepullsecrets-on-a-pod
   imagePullSecrets:
   #  - name: "regcred"
-  heapOptions: "-Xms512M -Xmx512M"
+  heapOptions: '-Xms512M -Xmx512M'
   resources: {}
   ## If you do want to specify resources, uncomment the following lines, adjust them as necessary,
   ## and remove the curly braces after 'resources:'
@@ -132,7 +132,7 @@ cp-kafka-connect:
   ## https://kubernetes.io/docs/concepts/containers/images/#specifying-imagepullsecrets-on-a-pod
   imagePullSecrets:
   #  - name: "regcred"
-  heapOptions: "-Xms512M -Xmx512M"
+  heapOptions: '-Xms512M -Xmx512M'
   resources: {}
   ## If you do want to specify resources, uncomment the following lines, adjust them as necessary,
   ## and remove the curly braces after 'resources:'
@@ -156,7 +156,7 @@ cp-ksql-server:
   ## https://kubernetes.io/docs/concepts/containers/images/#specifying-imagepullsecrets-on-a-pod
   imagePullSecrets:
   #  - name: "regcred"
-  heapOptions: "-Xms512M -Xmx512M"
+  heapOptions: '-Xms512M -Xmx512M'
   ksql:
     headless: false
 
@@ -171,7 +171,7 @@ cp-control-center:
   ## https://kubernetes.io/docs/concepts/containers/images/#specifying-imagepullsecrets-on-a-pod
   imagePullSecrets:
   #  - name: "regcred"
-  heapOptions: "-Xms512M -Xmx512M"
+  heapOptions: '-Xms512M -Xmx512M'
   resources: {}
   ## If you do want to specify resources, uncomment the following lines, adjust them as necessary,
   ## and remove the curly braces after 'resources:'
@@ -181,4 +181,3 @@ cp-control-center:
   #  requests:
   #   cpu: 100m
   #   memory: 128Mi
-
